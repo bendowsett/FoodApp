@@ -6,21 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 
-import com.example.foodapp.placeholder.PlaceholderContent.PlaceholderItem
-import com.example.foodapp.databinding.FragmentCuisinesBinding
+import com.example.foodapp.databinding.CuisineItemBinding
 
-/**
- * [RecyclerView.Adapter] that can display a [PlaceholderItem].
- * TODO: Replace the implementation with code for your data type.
- */
 class CuisinesRecyclerViewAdapter(
-    private val values: List<PlaceholderItem>
+    private val values: List<Cuisine>
 ) : RecyclerView.Adapter<CuisinesRecyclerViewAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
         return ViewHolder(
-            FragmentCuisinesBinding.inflate(
+            CuisineItemBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
@@ -31,20 +26,16 @@ class CuisinesRecyclerViewAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = values[position]
-        holder.idView.text = item.id
-        holder.contentView.text = item.content
+        holder.idView.text = item.name
+
     }
 
     override fun getItemCount(): Int = values.size
 
-    inner class ViewHolder(binding: FragmentCuisinesBinding) :
+    inner class ViewHolder(binding: CuisineItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         val idView: TextView = binding.itemNumber
-        val contentView: TextView = binding.content
 
-        override fun toString(): String {
-            return super.toString() + " '" + contentView.text + "'"
-        }
     }
 
 }

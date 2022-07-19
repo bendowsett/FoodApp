@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".SplashFragment">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".SplashFragment"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/splashFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:lottie_rawRes="@raw/food_choice"
+        app:lottie_autoPlay="true"
+        tools:lottie_rawRes="@raw/food_choice"
+        />
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:text="Foodie"/>
 
-</FrameLayout>
+</LinearLayout>

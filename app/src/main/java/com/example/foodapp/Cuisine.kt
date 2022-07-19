@@ -1,3 +1,3 @@
 package com.example.foodapp
 
-data class Cuisine()
+data class Cuisine(val name: String)

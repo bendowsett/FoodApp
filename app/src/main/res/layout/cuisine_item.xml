@@ -3,7 +3,21 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="12dp"
+        app:cardCornerRadius="10dp"
+        app:cardBackgroundColor="@color/grey"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        app:contentPadding="0dp"
+        >
 
     <TextView
         android:id="@+id/item_number"
@@ -14,6 +28,11 @@
         android:textStyle="bold"
         android:textAlignment="center"
         android:textSize="25dp"
+        tools:text ="Mexican"
+
         />
+
+    </androidx.cardview.widget.CardView>
+
 
 </LinearLayout>

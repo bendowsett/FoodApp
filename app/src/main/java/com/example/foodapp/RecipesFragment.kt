@@ -29,7 +29,7 @@ class RecipesFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_recipes_list, container, false)
+        val view = inflater.inflate(R.layout.recipe_list, container, false)
 
         // Set the adapter
         if (view is RecyclerView) {
@@ -38,7 +38,8 @@ class RecipesFragment : Fragment() {
                     columnCount <= 1 -> LinearLayoutManager(context)
                     else -> GridLayoutManager(context, columnCount)
                 }
-                adapter = RecipesRecyclerViewAdapter(PlaceholderContent.ITEMS)
+                adapter = RecipesRecyclerViewAdapter(RecipeList.recipeList
+                )
             }
         }
         return view

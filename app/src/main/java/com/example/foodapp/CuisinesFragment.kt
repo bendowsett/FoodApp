@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.foodapp.placeholder.PlaceholderContent
+
 
 /**
  * A fragment representing a list of Items.
@@ -29,7 +29,7 @@ class CuisinesFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_cuisines_list, container, false)
+        val view = inflater.inflate(R.layout.cuisine_list, container, false)
 
         // Set the adapter
         if (view is RecyclerView) {
@@ -38,7 +38,7 @@ class CuisinesFragment : Fragment() {
                     columnCount <= 1 -> LinearLayoutManager(context)
                     else -> GridLayoutManager(context, columnCount)
                 }
-                adapter = CuisinesRecyclerViewAdapter(PlaceholderContent.ITEMS)
+                adapter = CuisinesRecyclerViewAdapter(CuisineList.cuisineList)
             }
         }
         return view

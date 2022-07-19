@@ -1,6 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/cuisinesFragment">
 
+    <fragment
+        android:id="@+id/cuisinesFragment"
+        android:name="com.example.foodapp.CuisinesFragment"
+        android:label="fragment_cuisines_list"
+        tools:layout="@layout/cuisine_list" >
+        <action
+            android:id="@+id/action_cuisinesFragment_to_recipesFragment"
+            app:destination="@id/recipesFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipesFragment"
+        android:name="com.example.foodapp.RecipesFragment"
+        android:label="fragment_recipes_list"
+        tools:layout="@layout/recipe_list" >
+        <action
+            android:id="@+id/action_recipesFragment_to_recipeDetail"
+            app:destination="@id/recipeDetail" />
+        <argument
+            android:name="cuisineId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.foodapp.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_cuisinesFragment"
+            app:destination="@id/cuisinesFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipeDetail"
+        android:name="com.example.foodapp.RecipeDetail"
+        android:label="fragment_recipe_detail"
+        tools:layout="@layout/fragment_recipe_detail" >
+        <argument
+            android:name="recipeId"
+            app:argType="string" />
+    </fragment>
 </navigation>
