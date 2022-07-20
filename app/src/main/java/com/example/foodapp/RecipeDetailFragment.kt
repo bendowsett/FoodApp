@@ -51,7 +51,7 @@ class RecipeDetail : Fragment() {
 
         var recipe = AllRecipeDetails.allRecipeDetails[args.recipeId.toInt()-1]
 
-        Toast.makeText(context, "${recipe}", Toast.LENGTH_LONG ).show()
+        //Toast.makeText(context, "${recipe}", Toast.LENGTH_LONG ).show()
 
         var ingredients = view?.findViewById<TextView>(R.id.recipeIngredients)
         ingredients?.text = recipe.ingredients
