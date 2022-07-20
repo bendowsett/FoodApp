@@ -16,6 +16,7 @@
         android:padding="2dp"
         android:textSize="25dp"
         tools:text = "Recipe Name"
+        android:textStyle="bold"
         android:layout_marginBottom="10dp"/>
 
     <ImageView
@@ -31,7 +32,8 @@
         android:layout_height="wrap_content"
         android:text="Ingredients"
         android:padding="2dp"
-        android:layout_marginBottom="10dp"
+        android:textSize="18dp"
+        android:layout_marginBottom="2dp"
         android:textStyle="bold"/>
 
 
@@ -42,6 +44,7 @@
         tools:text= "Chicken\nCheese\nWater"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
+        android:layout_marginLeft="3dp"
         />
 
 
@@ -49,8 +52,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Instructions"
+        android:textSize="18dp"
         android:padding="2dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="2dp"
         android:textStyle="bold"/>
 
     <TextView
@@ -60,6 +64,7 @@
         tools:text= "Chop\nBoil\nServe"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
+        android:layout_marginLeft="3dp"
         />
 
 
