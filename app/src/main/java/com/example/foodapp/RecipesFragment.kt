@@ -8,12 +8,16 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.navigation.fragment.navArgs
 import com.example.foodapp.placeholder.PlaceholderContent
 
 /**
  * A fragment representing a list of Items.
  */
 class RecipesFragment : Fragment() {
+
+    val args: RecipesFragmentArgs by navArgs()
 
     private var columnCount = 1
 
@@ -38,12 +42,24 @@ class RecipesFragment : Fragment() {
                     columnCount <= 1 -> LinearLayoutManager(context)
                     else -> GridLayoutManager(context, columnCount)
                 }
-                adapter = RecipesRecyclerViewAdapter(RecipeList.recipeList
-                )
+                if(args.cuisineId == "African"){
+                adapter = RecipesRecyclerViewAdapter(AfricanRecipes.recipeList)
+                }else if(args.cuisineId == "American"){
+                    adapter = RecipesRecyclerViewAdapter(AmericanRecipes.recipeList)
+                }
+
             }
         }
         return view
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        Toast.makeText(context, "${args.cuisineId}", Toast.LENGTH_LONG).show()
+
+    }
+
 
     companion object {
 

@@ -8,6 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.navigation.Navigation
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
 
 
 /**
@@ -38,10 +42,17 @@ class CuisinesFragment : Fragment() {
                     columnCount <= 1 -> LinearLayoutManager(context)
                     else -> GridLayoutManager(context, columnCount)
                 }
-                adapter = CuisinesRecyclerViewAdapter(CuisineList.cuisineList)
+                adapter = CuisinesRecyclerViewAdapter(CuisineList.cuisineList, ::onCuisineClick)
             }
         }
         return view
+    }
+
+    private fun onCuisineClick(id:String){
+
+        val action = CuisinesFragmentDirections.actionCuisinesFragmentToRecipesFragment(id)
+        view?.let{findNavController(it).navigate(action)}
+
     }
 
     companion object {

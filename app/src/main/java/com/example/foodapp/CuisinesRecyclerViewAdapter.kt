@@ -11,7 +11,8 @@ import androidx.navigation.Navigation
 import com.example.foodapp.databinding.CuisineItemBinding
 
 class CuisinesRecyclerViewAdapter(
-    private val values: List<Cuisine>
+    private val values: List<Cuisine>,
+    val onItemClick: (id:String) -> Unit
 ) : RecyclerView.Adapter<CuisinesRecyclerViewAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -26,9 +27,14 @@ class CuisinesRecyclerViewAdapter(
 
     }
 
+
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = values[position]
         holder.idView.text = item.name
+        holder.idView.setOnClickListener{
+            onItemClick(item.name)
+        }
 
     }
 
@@ -38,13 +44,6 @@ class CuisinesRecyclerViewAdapter(
         RecyclerView.ViewHolder(binding.root) {
         val idView: TextView = binding.itemNumber
 
-        init {
-            idView.setOnClickListener {
-               Toast.makeText(idView.context, "YOu clicked on ${idView.text}", Toast.LENGTH_LONG).show()
-
-                Navigation.findNavController(idView).navigate(R.id.action_cuisinesFragment_to_recipesFragment)
-            }
-        }
 
     }
 
