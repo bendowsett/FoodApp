@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
+import androidx.navigation.Navigation
 
 import com.example.foodapp.databinding.CuisineItemBinding
 
@@ -35,6 +37,14 @@ class CuisinesRecyclerViewAdapter(
     inner class ViewHolder(binding: CuisineItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         val idView: TextView = binding.itemNumber
+
+        init {
+            idView.setOnClickListener {
+               Toast.makeText(idView.context, "YOu clicked on ${idView.text}", Toast.LENGTH_LONG).show()
+
+                Navigation.findNavController(idView).navigate(R.id.action_cuisinesFragment_to_recipesFragment)
+            }
+        }
 
     }
 
