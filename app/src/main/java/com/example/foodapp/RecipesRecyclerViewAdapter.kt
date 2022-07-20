@@ -15,7 +15,8 @@ import com.example.foodapp.databinding.RecipeItemBinding
  * TODO: Replace the implementation with code for your data type.
  */
 class RecipesRecyclerViewAdapter(
-    private val values: List<Recipe>
+    private val values: List<Recipe>,
+    val onItemClick: (id:Int) -> Unit
 ) : RecyclerView.Adapter<RecipesRecyclerViewAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -34,6 +35,9 @@ class RecipesRecyclerViewAdapter(
         val recipe = values[position]
         holder.name.text = recipe.name
         holder.image.setImageResource(recipe.image)
+        holder.itemView.setOnClickListener{
+            onItemClick(recipe.id)
+        }
 
     }
 

@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
 import com.example.foodapp.placeholder.PlaceholderContent
 
@@ -43,9 +44,9 @@ class RecipesFragment : Fragment() {
                     else -> GridLayoutManager(context, columnCount)
                 }
                 if(args.cuisineId == "African"){
-                adapter = RecipesRecyclerViewAdapter(AfricanRecipes.recipeList)
+                adapter = RecipesRecyclerViewAdapter(AfricanRecipes.recipeList,::onRecipeClick)
                 }else if(args.cuisineId == "American"){
-                    adapter = RecipesRecyclerViewAdapter(AmericanRecipes.recipeList)
+                    adapter = RecipesRecyclerViewAdapter(AmericanRecipes.recipeList, ::onRecipeClick)
                 }
 
             }
@@ -53,10 +54,11 @@ class RecipesFragment : Fragment() {
         return view
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    private fun onRecipeClick(id:Int){
 
-        Toast.makeText(context, "${args.cuisineId}", Toast.LENGTH_LONG).show()
+        val action = RecipesFragmentDirections.actionRecipesFragmentToRecipeDetail(id.toString())
+        view?.let{ Navigation.findNavController(it).navigate(action)}
+
 
     }
 

@@ -9,17 +9,21 @@
 
 
     <TextView
+        android:id="@+id/recipeName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Salad"
         android:textAlignment="center"
         android:padding="2dp"
-        android:textSize="25dp"/>
+        android:textSize="25dp"
+        tools:text = "Recipe Name"
+        android:layout_marginBottom="10dp"/>
 
     <ImageView
+        android:id="@+id/recipeImage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:src="@drawable/food"
+        android:layout_marginBottom="10dp"
         />
 
     <TextView
@@ -30,23 +34,35 @@
         android:layout_marginBottom="10dp"
         android:textStyle="bold"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="wrap_content"
+
+    <TextView
+        android:id="@+id/recipeIngredients"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="5dp"/>
+        tools:text= "Chicken\nCheese\nWater"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        />
 
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text= "Instructions"
-        android:textStyle="bold"
-        android:layout_marginTop="10dp"/>
+        android:text="Instructions"
+        android:padding="2dp"
+        android:layout_marginBottom="10dp"
+        android:textStyle="bold"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/recipeInstructions"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="5dp"/>
+        tools:text= "Chop\nBoil\nServe"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        />
+
+
 
 
 </LinearLayout>
