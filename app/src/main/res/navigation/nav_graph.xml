@@ -13,7 +13,7 @@
         <action
             android:id="@+id/action_cuisinesFragment_to_recipesFragment"
             app:destination="@id/recipesFragment"
-            app:enterAnim="@android:anim/slide_in_left"
+            app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@android:anim/slide_out_right" />
     </fragment>
     <fragment
@@ -35,6 +35,6 @@
         tools:layout="@layout/fragment_recipe_detail" >
         <argument
             android:name="recipeId"
-            app:argType="string" />
+            app:argType="integer" />
     </fragment>
 </navigation>

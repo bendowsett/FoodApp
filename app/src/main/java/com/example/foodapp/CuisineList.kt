@@ -1,7 +1,7 @@
 package com.example.foodapp
 
 object CuisineList {
-    val cuisineList = listOf<Cuisine>(
+    val cuisineList = listOf(
 
         Cuisine("African"),
         Cuisine("American"),

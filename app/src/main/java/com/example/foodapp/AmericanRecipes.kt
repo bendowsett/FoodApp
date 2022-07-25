@@ -1,7 +1,7 @@
 package com.example.foodapp
 
 object AmericanRecipes {
-    val recipeList = listOf<Recipe>(
+    val recipeList = listOf(
         Recipe(13, "American Recipe 1", R.drawable.download),
         Recipe(14, "American Recipe 2", R.drawable.boliedegg),
         Recipe(15, "American Recipe 3", R.drawable.fish),
