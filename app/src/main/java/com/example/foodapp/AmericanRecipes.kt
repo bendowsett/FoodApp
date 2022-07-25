@@ -1,5 +1,7 @@
 package com.example.foodapp
 
+import com.example.foodapp.models.Recipe
+
 object AmericanRecipes {
     val recipeList = listOf(
         Recipe(13, "American Recipe 1", R.drawable.download),

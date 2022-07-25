@@ -1,5 +1,7 @@
 package com.example.foodapp
 
+import com.example.foodapp.models.Cuisine
+
 object CuisineList {
     val cuisineList = listOf(
 

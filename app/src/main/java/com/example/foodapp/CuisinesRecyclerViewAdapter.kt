@@ -7,6 +7,7 @@ import android.widget.TextView
 
 
 import com.example.foodapp.databinding.CuisineItemBinding
+import com.example.foodapp.models.Cuisine
 
 class CuisinesRecyclerViewAdapter(
     private val values: List<Cuisine>,

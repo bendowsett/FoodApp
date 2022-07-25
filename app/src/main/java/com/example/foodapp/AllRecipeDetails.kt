@@ -1,5 +1,7 @@
 package com.example.foodapp
 
+import com.example.foodapp.models.RecipeDetails
+
 object AllRecipeDetails {
 
     val allRecipeDetails = listOf(

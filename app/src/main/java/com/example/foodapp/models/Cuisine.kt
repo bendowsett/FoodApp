@@ -1,3 +1,3 @@
-package com.example.foodapp
+package com.example.foodapp.models
 
 data class Cuisine(val name: String)
